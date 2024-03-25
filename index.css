@@ -7,4 +7,37 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer {
+  display: flex;
+  flex-direction: row;
+  font-size: 25px;
+  gap: 8px;
+}
+
+.calculation {
+  display: flex;
+  flex-direction: row;
+  gap: 20px; 
+}
+
+#first-num {
+  font-size: 40px;
+}
+
+#second-num {
+  font-size: 40px;
+}
+
+#result {
+  font-size: 30px;
+  color: #D4A65B;
+}
+
+.operator {
+  font-size: 40px;
 }
