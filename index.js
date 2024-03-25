@@ -28,7 +28,7 @@ window.onload = function () {
     let currentHighScore = +highScore.innerText;
     let currentScore = +timer.innerText;
 
-    if (currentScore < currentHighScore) {
+    if (currentScore < currentHighScore || currentHighScore === 0) {
       highScore.innerText = currentScore;
     }
   };
