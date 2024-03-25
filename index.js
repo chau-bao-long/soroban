@@ -2,9 +2,10 @@ window.onload = function () {
   // Pick DOM
   let firstNum = document.getElementById('first-num');
   let secondNum = document.getElementById('second-num');
-  let container = document.getElementById('container');
+  let layout = document.getElementById('layout');
   let result = document.getElementById('result');
   let timer = document.getElementById('timer');
+  let highScore = document.getElementById('high-score');
   let rand1 = 0
   let rand2 = 0
 
@@ -23,13 +24,22 @@ window.onload = function () {
     firstNum.innerText = rand1;
     secondNum.innerText = rand2;
   };
+  const setHighScore = () => {
+    let currentHighScore = +highScore.innerText;
+    let currentScore = +timer.innerText;
+
+    if (currentScore < currentHighScore) {
+      highScore.innerText = currentScore;
+    }
+  };
 
   // Event listeners
-  container.addEventListener("click", function () {
+  layout.addEventListener("click", function () {
     if (result.innerText === '=') {
       // Show result
       result.innerText = `= ${rand1 + rand2}`;
       clearInterval(interval)
+      setHighScore()
     } else {
       // Reset calculation
       result.innerText = '=';

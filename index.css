@@ -3,9 +3,12 @@ body {
   color: #149414;
 }
 
-.container {
-  width: 100vw;
-  height: 100vh;
+.layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,6 +21,15 @@ body {
   font-size: 60px;
   gap: 8px;
   color: #FF537D;
+}
+
+.statistic {
+  font-size: 25px;
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  gap: 5px;
+  margin-right: 20px;
 }
 
 .calculation {
