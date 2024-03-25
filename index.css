@@ -15,8 +15,9 @@ body {
 .timer {
   display: flex;
   flex-direction: row;
-  font-size: 25px;
+  font-size: 60px;
   gap: 8px;
+  color: #FF537D;
 }
 
 .calculation {
@@ -26,18 +27,18 @@ body {
 }
 
 #first-num {
-  font-size: 40px;
+  font-size: 100px;
 }
 
 #second-num {
-  font-size: 40px;
+  font-size: 100px;
 }
 
 #result {
-  font-size: 30px;
+  font-size: 80px;
   color: #D4A65B;
 }
 
 .operator {
-  font-size: 40px;
+  font-size: 100px;
 }
