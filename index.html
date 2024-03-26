@@ -5,10 +5,10 @@
     <meta charset=utf-8">
     <title>Soroban mental training</title>
     <style>
-      p {text-align:center;}
-      span, input, p { 
-        font-family: monospace, arial, cursive, sans-serif;
-      }
+    p {text-align:center;}
+    span, input, p { 
+      font-family: monospace, arial, cursive, sans-serif;
+    }
     </style>
     <link rel="stylesheet" href="index.css">
     <script src="index.js"></script>
@@ -16,24 +16,36 @@
 
   <body>
     <div id="layout" class="layout">
-      <div class="statistic">
-        <p class="high-score">High score: </p>
-        <p id="high-score">0</p>
-      </div>
-      <div id="main" class="main">
+      <header>
+        <div class="config-calculation">
+          <input class="config-num-1" id="config-num-1" value="3" />digits
+          <select class="config-operator" id="config-operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+          </select>
+          <input class="config-num-2" id="config-num-2" value="3" />digits
+        </div>
+        <div class="statistic">
+          <p class="high-score">High score: </p>
+          <p id="high-score">0</p>
+        </div>
+      </header>
+      <main id="main">
         <div class="timer">
           <p> Timer: </p>
           <p id="timer">0</p>
         </div>
         <div class="calculation">
           <p id="first-num">0</p>
-          <p class="operator">+</p>
+          <p id="operator" class="operator">+</p>
           <p id="second-num">0</p>
         </div>
         <div class="result">
           <p id="result">=</p>
         </div>
-      </div>
+      </main>
     </div>
   </body>
 </html>
