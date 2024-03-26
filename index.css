@@ -32,13 +32,13 @@ main {
 .timer {
   display: flex;
   flex-direction: row;
-  font-size: 60px;
+  font-size: 4rem;
   gap: 8px;
   color: #FF537D;
 }
 
 .statistic {
-  font-size: 25px;
+  font-size: 1.5rem;
   display: flex;
   flex-direction: row;
   align-self: flex-end;
@@ -53,27 +53,27 @@ main {
 }
 
 #first-num {
-  font-size: 100px;
+  font-size: 5rem;
 }
 
 #second-num {
-  font-size: 100px;
+  font-size: 5rem;
 }
 
 #result {
-  font-size: 80px;
+  font-size: 4rem;
   color: #D4A65B;
 }
 
 .operator {
-  font-size: 100px;
+  font-size: 5rem;
 }
 
 .config-calculation {
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-size: 25px;
+  font-size: 2rem;
 }
 
 .config-num-1,
@@ -84,7 +84,7 @@ main {
   border: solid 2px;
   text-align: center;
   margin: 15px 10px;
-  font-size: 20px;
+  font-size: 1.5rem;
   width: 60px;
   height: 40px;
 }
