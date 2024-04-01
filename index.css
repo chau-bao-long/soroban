@@ -29,10 +29,23 @@ main {
   height: 100%;
 }
 
+.meter {
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+  color: #FF537D;
+  font-size: 3rem;
+}
+
+.solved {
+  display: flex;
+  color: #149414;
+  gap: 8px;
+}
+
 .timer {
   display: flex;
   flex-direction: row;
-  font-size: 4rem;
   gap: 8px;
   color: #FF537D;
 }
@@ -50,6 +63,7 @@ main {
   display: flex;
   flex-direction: row;
   gap: 20px; 
+  font-weight: bold;
 }
 
 #first-num {

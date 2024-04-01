@@ -6,19 +6,26 @@ window.onload = function () {
   let main = document.getElementById('main');
   let result = document.getElementById('result');
   let timer = document.getElementById('timer');
+  let solved = document.getElementById('solved');
   let highScore = document.getElementById('high-score');
   let configNum1 = document.getElementById('config-num-1');
   let configNum2 = document.getElementById('config-num-2');
   let configOperator = document.getElementById('config-operator');
   let rand1 = 0;
   let rand2 = 0;
+  let duration = 0;
+  let lastDuration = 0; // The duration from last high score calculation
 
   // Shared functions
-  const startTimer = () => {
-    timer.innerText = '0';
-
+  const formatTimer = (time) => {
+    let min = Math.floor(time / 60);
+    let sec = (time % 60).toFixed(1);
+    return (min > 0 ? `${min}m ` : '') + `${sec}s`;
+  }
+  const resumeTimer = () => {
     return setInterval(function () {
-      timer.innerText = (+timer.innerText + 0.1).toFixed(1);
+      duration += 0.1
+      timer.innerText = formatTimer(duration)
     }, 100);
   };
   const randomCalculation = () => {
@@ -30,19 +37,25 @@ window.onload = function () {
     operator.innerText = configOperator.value;
   };
   const setHighScore = () => {
+    let solvedScore = +solved.innerText
+     
+    if (solvedScore <= 0 || solvedScore % 10 !== 0) return;
     let currentHighScore = +highScore.innerText;
-    let currentScore = +timer.innerText;
+    let currentDuration = duration.toFixed(1)
+    let currentScore = (currentDuration - lastDuration).toFixed(1);
 
     if (currentScore < currentHighScore || currentHighScore === 0) {
       highScore.innerText = currentScore;
     }
+    lastDuration = currentDuration;
   };
 
   // Event listeners
   main.addEventListener("click", function () {
     if (result.innerText === '=') {
-      // Show result
+      // Pause and show result
       result.innerText = `= ${calculateNum(rand1, rand2, configOperator.value)}`;
+      solved.innerText = +solved.innerText + 1;
       clearInterval(interval)
       setHighScore()
     } else {
@@ -50,12 +63,12 @@ window.onload = function () {
       result.innerText = '=';
       randomCalculation();
 
-      interval = startTimer();
+      interval = resumeTimer();
     }
   });
 
   // Main action
-  let interval = startTimer();
+  let interval = resumeTimer();
   randomCalculation();
 }
 
