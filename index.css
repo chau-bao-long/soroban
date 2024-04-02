@@ -30,7 +30,6 @@ main {
 }
 
 .meter {
-  width: 50vw;
   display: flex;
   justify-content: space-between;
   color: #FF537D;
@@ -49,6 +48,7 @@ main {
   flex-direction: row;
   gap: 8px;
   color: #FF537D;
+  overflow: visible;
 }
 
 .statistic {

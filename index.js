@@ -11,16 +11,17 @@ window.onload = function () {
   let configNum1 = document.getElementById('config-num-1');
   let configNum2 = document.getElementById('config-num-2');
   let configOperator = document.getElementById('config-operator');
+
+  const numberOfRound = 10;
   let rand1 = 0;
   let rand2 = 0;
   let duration = 0;
-  let lastDuration = 0; // The duration from last high score calculation
 
   // Shared functions
   const formatTimer = (time) => {
     let min = Math.floor(time / 60);
     let sec = (time % 60).toFixed(1);
-    return (min > 0 ? `${min}m ` : '') + `${sec}s`;
+    return (min > 0 ? `${min}m` : '') + `${sec}s`;
   }
   const resumeTimer = () => {
     return setInterval(function () {
@@ -39,15 +40,16 @@ window.onload = function () {
   const setHighScore = () => {
     let solvedScore = +solved.innerText
      
-    if (solvedScore <= 0 || solvedScore % 10 !== 0) return;
+    if (solvedScore <= 0 || solvedScore % numberOfRound !== 0) return;
     let currentHighScore = +highScore.innerText;
-    let currentDuration = duration.toFixed(1)
-    let currentScore = (currentDuration - lastDuration).toFixed(1);
+    let currentScore = duration.toFixed(1);
 
     if (currentScore < currentHighScore || currentHighScore === 0) {
       highScore.innerText = currentScore;
     }
-    lastDuration = currentDuration;
+
+    // Reset timer after end of rounds
+    duration = 0;
   };
 
   // Event listeners
