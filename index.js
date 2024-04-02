@@ -12,7 +12,7 @@ window.onload = function () {
   let configNum2 = document.getElementById('config-num-2');
   let configOperator = document.getElementById('config-operator');
 
-  const numberOfRound = 10;
+  const numberOfRounds = 10;
   let rand1 = 0;
   let rand2 = 0;
   let duration = 0;
@@ -40,12 +40,15 @@ window.onload = function () {
   const setHighScore = () => {
     let solvedScore = +solved.innerText
      
-    if (solvedScore <= 0 || solvedScore % numberOfRound !== 0) return;
+    if (solvedScore <= 0 || solvedScore % numberOfRounds !== 0) return;
     let currentHighScore = +highScore.innerText;
     let currentScore = duration.toFixed(1);
 
     if (currentScore < currentHighScore || currentHighScore === 0) {
       highScore.innerText = currentScore;
+      alert(`Congratz! It's a high score for ${numberOfRounds} rounds in ${formatTimer(duration)}`)
+    } else {
+      alert(`You did ${numberOfRounds} rounds in ${formatTimer(duration)}`)
     }
 
     // Reset timer after end of rounds
