@@ -61,8 +61,8 @@ window.onload = function () {
       // Pause and show result
       result.innerText = `= ${calculateNum(rand1, rand2, configOperator.value)}`;
       solved.innerText = +solved.innerText + 1;
-      clearInterval(interval)
-      setHighScore()
+      clearInterval(interval);
+      setTimeout(setHighScore, 500);
     } else {
       // Reset calculation
       result.innerText = '=';
