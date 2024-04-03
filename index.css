@@ -10,8 +10,9 @@ body {
 
 header {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: space-between;
+  gap: 50px;
 }
 
 main {
@@ -58,6 +59,8 @@ main {
   align-self: flex-end;
   gap: 5px;
   margin-right: 20px;
+  background: #161616;
+  padding: 0 10px;
 }
 
 .calculation {
@@ -86,16 +89,19 @@ main {
 
 .config-calculation {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
-  justify-content: space-between;
   font-size: 2rem;
+  background: #161616;
+  padding: 0 10px;
 }
 
 .config-round {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  background: #161616;
+  padding: 0 10px;
 }
 
 .round-label { 
