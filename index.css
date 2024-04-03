@@ -86,11 +86,23 @@ main {
 
 .config-calculation {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   align-items: center;
+  justify-content: space-between;
   font-size: 2rem;
 }
 
+.config-round {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.round-label { 
+  font-size: 1.5rem;
+}
+
+.round-num,
 .config-num-1,
 .config-num-2,
 .config-operator {

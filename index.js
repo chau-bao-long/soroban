@@ -11,8 +11,9 @@ window.onload = function () {
   let configNum1 = document.getElementById('config-num-1');
   let configNum2 = document.getElementById('config-num-2');
   let configOperator = document.getElementById('config-operator');
+  let roundNum = document.getElementById('round-num');
 
-  const numberOfRounds = 10;
+  let numberOfRounds = +roundNum.value;
   let rand1 = 0;
   let rand2 = 0;
   let duration = 0;
@@ -54,9 +55,19 @@ window.onload = function () {
     // Reset timer after end of rounds
     duration = 0;
   };
+  const resetCalculator = () => {
+    highScore.innerText = 0;
+    result.innerText = '=';
+    solved.innerText= '0';
+    numberOfRounds = +roundNum.value;
+    randomCalculation();
+    clearInterval(interval);
+    duration = 0;
+    interval = resumeTimer();
+  };
 
   // Event listeners
-  main.addEventListener("click", function () {
+  main.addEventListener("click", () => {
     if (result.innerText === '=') {
       // Pause and show result
       result.innerText = `= ${calculateNum(rand1, rand2, configOperator.value)}`;
@@ -71,6 +82,7 @@ window.onload = function () {
       interval = resumeTimer();
     }
   });
+  roundNum.addEventListener("change", () => resetCalculator());
 
   // Main action
   let interval = resumeTimer();
